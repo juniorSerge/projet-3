@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Premier projet</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+    <script>
+        /*
+       // alert("bonjour");
+    var a,b;
+    //instruction lire
+    a=prompt("entrer un nombre");
+    //convertir la VARIABLE a en entier
+    a=parseInt(a);
+    //alert(a);
+    b=a*a;
+    alert("le carre de ce nombre est:"+b);
+    //alert(b);
+   
+   var prixHT,nbrArticle,TVA,TTC;
+   prixHT=prompt("entrer le prix HT:");
+   prixHT=parseFloat(prixHT);
+   nbrArticle=prompt("entrer le nombre d'articles:");
+   nbrArticle=parseFloat(nbrArticle);   
+   TVA=prompt("entrer le taux de TVA:");
+   TVA=parseFloat(TVA); 
+   TTC = (nbrArticle*prixHT) + (nbrArticle*prixHT*((TVA)/100));
+   alert("le prix de cet Article vaut :"+TTC);
+
+         */
+        /*
+    var a;
+    a=prompt("entrer un nombre");
+    a=parseFloat(a);
+    if(a==0){
+        alert("le nombre est nul");
+    }else if(a<0){
+        alert("le nombre est negatif ");
+    } 
+    if(a>0){
+        alert("le nombre est positif");
+}
+    */
+    /*
+    var a,b;
+    a=prompt("entrer le premier nombre:");
+    a=parseFloat(a);
+    b=prompt("entrer le deuxieme nombre:");
+    b=parseFloat(b);
+
+    if((a>0) &&(b<0)){
+        alert("le produit est negatif");
+    } else if((a<0)&&(b>0)){
+        alert("le produit est negatif");
+    }
+     else { 
+        alert("le produit est positif");
+    }
+    */
+
+
+    //exo 4.4
+function exo44(){
+var a,b;
+    a=prompt("entrer le nombre photocopies:");
+    a=parseFloat(a);
+if(a>0 && a<=10){
+    b = a*10;
+       alert("Votre facture est de :"+b);
+}
+if(a>10 && a<=20){
+    b = 10*0.10 +(a-10)*0.09;
+       alert("Votre facture est de :"+b);
+}
+if(a>20){
+    b = 10*0.10 + 20*0.09 + (a-30)*0.08;
+       alert("Votre facture est de :"+b);
+}
+}
+//exo 4.5
+
+ function exo45()
+ {
+var a,b;
+    a=document.getElementById("age").value;
+    a=parseInt(a);
+    b=document.getElementById("sexe").value;
+    b=parseInt(b);
+    if(b==0 && a>20){
+      document.getElementById("resultat").value="vous pouvez payer les impots";
+    }
+    if(b==0 && a<=20){
+        document.getElementById("resultat").value="Vous ne payez pas les impots";
+    }  
+    if(b==1){
+        if(a>=18 && a<=35){ 
+       // alert("Vous payez les impots"); 
+        document.getElementById("resultat").value="Vous payez les impots";
+        }    
+    if(a<18){
+        document.getElementById("resultat").value="Vous ne payez pas les impots";
+        //alert("Vous ne payez pas les impots");     
+    }
+    if(a>35){
+        document.getElementById("resultat").value="Vous ne payez pas les impots";
+        //alert("Vous ne payez pas les impots");     
+    }  
+    }
+ }
+    
+  
+    //exo 3.6 age
+ function exo3()
+ {
+
+
+var a;
+    a=prompt("entrer un nombre:");
+    a=parseInt(a);
+    if(a==6 || a==7){
+        alert("Poussin");
+    }
+    if(a==8 || a==9){
+        alert("Pupile");
+    }
+
+    if(a==10 || a==11){
+        alert("Minime");
+    }
+
+    if(a>=12){
+        alert("Cadet");
+    }
+ }
+    </script>
+<body>
+  
+
+<h1>Algorithme de Categorie </h1>
+
+<div class="Formulaire">
+    <label for="" class="Tete">Enter votre âge :</label>
+    <input type="text" id="age" placeholder="ex: 5">
+    <label for="" class="Tete">Enter votre sexe :</label>
+    <select name="" id="sexe">
+        <option value="">Selectionnez le sexe</option>
+        <option value="0" >Homme</option>
+        <option value="1">Femme</option>
+    </select>
+    <button ondblclick="exo45()">Vérifier</button>
+
+    <input type="text" value="0" disabled="disabled" id="resultat" class="message ">
+</div>
+
+
+
+<div class="boutons">
+    <button onclick="exo45()">Exercice 4.5</button>
+    <button onclick="exo44()">Exercice 4.4</button>
+    <button onclick="exo3()">Exercice 3.6</button>
+</div>
+
+</body>
+</html>
